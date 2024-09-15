@@ -15,9 +15,8 @@ if extension=="webp":
     os.system(f"magick convert cover.webp -resize 1080x1080 cover-1080p.jpeg")
 
     originalFile = os.stat("cover.webp").st_size / 1024 /1024
-    jpegFileA = os.stat("cover-1080p-versionA.jpeg").st_size / 1024 /1024
-    jpegFileB = os.stat("cover-1080p-versionB.jpeg").st_size / 1024 /1024
-    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file A:\t{jpegFileA:.2f} MB\n1080p file B:\t{jpegFileB:.2f} MB")
+    jpegFile = os.stat("cover-1080p.jpeg").st_size / 1024 /1024
+    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file:\t{jpegFile:.2f} MB")
     exit(0)
 # AVIF route
 elif extension=="avif":
@@ -25,9 +24,8 @@ elif extension=="avif":
     os.system(f"magick convert cover.avif -resize 1080x1080 cover-1080p.jpeg")
 
     originalFile = os.stat("cover.avif").st_size / 1024 /1024
-    jpegFileA = os.stat("cover-1080p-versionA.jpeg").st_size / 1024 /1024
-    jpegFileB = os.stat("cover-1080p-versionB.jpeg").st_size / 1024 /1024
-    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file A:\t{jpegFileA:.2f} MB\n1080p file B:\t{jpegFileB:.2f} MB")
+    jpegFile = os.stat("cover-1080p.jpeg").st_size / 1024 /1024
+    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file:\t{jpegFile:.2f} MB")
     exit(0)
 # JXL route
 elif extension=="jxl":
@@ -35,9 +33,8 @@ elif extension=="jxl":
     os.system(f"magick convert cover.jxl -resize 1080x1080 cover-1080p.jpeg")
 
     originalFile = os.stat("cover.jxl").st_size / 1024 /1024
-    jpegFileA = os.stat("cover-1080p-versionA.jpeg").st_size / 1024 /1024
-    jpegFileB = os.stat("cover-1080p-versionB.jpeg").st_size / 1024 /1024
-    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file A:\t{jpegFileA:.2f} MB\n1080p file B:\t{jpegFileB:.2f} MB")
+    jpegFile = os.stat("cover-1080p.jpeg").st_size / 1024 /1024
+    print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\n1080p file:\t{jpegFile:.2f} MB")
     exit(0)
 
 os.system(f"cp cover.{extension} coverBKP.{extension}")
@@ -52,6 +49,6 @@ os.remove(f"cover.{extension}")
 
 originalFile = os.stat("coverBKP." + extension).st_size / 1024 /1024
 jxlFile = os.stat("cover.jxl").st_size / 1024 /1024
-jpegFileB = os.stat("cover-1080p.jpeg").st_size / 1024 /1024
+jpegFile = os.stat("cover-1080p.jpeg").st_size / 1024 /1024
 
-print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\nJpegXl file:\t{jxlFile:.2f} MB\n1080p file:\t{jpegFileB:.2f} MB")
+print(f"Done:\nOriginal file:\t{originalFile:.2f} MB\nJpegXl file:\t{jxlFile:.2f} MB\n1080p file:\t{jpegFile:.2f} MB")
